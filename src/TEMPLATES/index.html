@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+{%block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+{%endblock%}
+
+{%block content%}
+    <main>
+        <section class="section-lista-tarea">
+            <h1>Lista de Tareas</h1>
+            <ul>
+                {% for tarea in tareas%}
+                {% if tarea.completado == True %}
+                <li><p><del>{{ tarea.titulo }}</del></p><a class="editar-tarea" href="{% url 'editar_tarea' tarea.id %}">Editar</a><a class="borrar-tarea" href="{% url 'borrar' tarea.id %}">Borrar</a></li>
+                {% else %}
+                <li><p>{{ tarea.titulo }}</p> <a class="editar-tarea" href="{% url 'editar_tarea' tarea.id %}">Editar</a><a class="borrar-tarea" href="{% url 'borrar' tarea.id %}">Borrar</a></li>
+                {% endif %}
+                {% endfor %}
+               
+            </ul>
+            <a href="{% url 'delete_all'%}" class="btn-delete-all">Eliminar Todo</a>
+        </section>
+        <section class="section-agregar-tarea">
+            <h2>Agregar Tareas</h2>
+            <form action='/' method="POST">{% csrf_token %}
+                <label for="id_titulo">Tarea:</label>
+                <input type="text" name="titulo" maxlength="200" required="" id="id_titulo"><br>
+                <button class="btn-agregar-tarea" type="submit">Agregar</button>
+            </form>
+        </section>
+    </main>
+
+{% endblock%}

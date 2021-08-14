@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+
+{% load static %}
+
+
+{%block link%}
+<link rel="stylesheet" type="text/css" href="{% static 'editar_tarea.css' %}">
+{% endblock %}
+
+{%block content%}
+    <main>
+        <section>
+            <h2>Editar Tarea</h2>
+            <form method="POST">{% csrf_token %}
+                {{form.as_p}}
+                <div class="line"></div>
+                <button class="edit-btn-editar-tarea" type="submit">Editar</button>
+            </form>
+        </section>
+    </main>
+
+{% endblock %}
