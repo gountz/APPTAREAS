@@ -1,0 +1,73 @@
+@import 'layout.css';
+main{
+    height: 100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display:flex;
+    flex-direction: column;
+    background:var(--fondo-lista-agregar);
+    height: 15em;
+    width: 40%;
+    border-radius: 15px;
+}
+
+h2{
+    margin:5% auto;
+}
+form{
+    padding-top:2%;
+    display: flex;
+    flex-direction: column;
+    background:var(--fondo-tareas);
+    width:80%;
+    height: 50%;
+    margin:0 auto;
+    border-radius: 10px;
+}
+form>p{
+    margin:2% 0;
+    height: 25%;
+}
+p>label{
+    margin-left:5%;
+}
+#id_completado{
+    margin:2% 5%;
+}
+input[type=checkbox]
+{
+  -webkit-transform: scale(2);
+  padding: 10px;
+}
+#id_titulo{
+    color:#fff;
+    font-size:18px;
+    font-weight: bold;
+    width:60%;
+    border:none;
+    background:transparent;
+    border-bottom: 1px solid #000;
+}
+.line{
+    width: 100%;
+    height:1.5px;
+    background:#000;
+}
+.edit-btn-editar-tarea{
+    background:var(--fondo-btn-delete);
+    border:none;
+    border-radius:15px;
+    width:30%;
+    height:20%;
+    margin:1% auto;
+    cursor:pointer;
+}
+.edit-btn-editar-tarea:hover{
+    background:var(--fondo-btn-delete-hover);
+}

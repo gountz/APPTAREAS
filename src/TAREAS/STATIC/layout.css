@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+:root{
+    margin: 0;
+    box-sizing:border-box;
+    padding:0;
+    font-family: 'Yomogi', cursive;
+    box-sizing:border-box;
+    font-size: 22px;
+    --fondo-body-uno:#252525;
+    --fondo-body-dos:#202020;
+    --fondo-lista-agregar:#F3C677;
+    --fondo-btn:#85BAA1;
+    --fondo-btn-hover:#75dae6;   
+    --fondo-tareas:#0E3B43;
+    --fondo-btn-delete:#F26419;
+    --fondo-btn-delete-hover:#FFA630;
+}
+
+body{
+    background: linear-gradient(to right, var(--fondo-body-uno), var(--fondo-body-dos));   
+}
